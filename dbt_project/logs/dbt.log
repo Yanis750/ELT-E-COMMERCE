@@ -1,0 +1,94 @@
+[0m21:08:37.128476 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104290ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105333580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053333a0>]}
+
+
+============================== 21:08:37.131233 | ab3400fd-a86e-46a8-bac6-2e9ce6de851f ==============================
+[0m21:08:37.131233 [info ] [MainThread]: Running with dbt=1.10.23
+[0m21:08:37.131611 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'log_format': 'default', 'invocation_command': 'dbt init ecommerce_dbt', 'no_print': 'None', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'target_path': 'None', 'log_path': 'logs', 'static_parser': 'True', 'write_json': 'True', 'debug': 'False', 'warn_error': 'None', 'quiet': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'profiles_dir': '/Users/yanis/.dbt', 'printer_width': '80', 'indirect_selection': 'eager', 'introspect': 'True'}
+[0m21:08:37.140381 [warn ] [MainThread]: [[33mWARNING[0m]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. Please upgrade to a newer supported version of dbt for new projects: https://docs.getdbt.com/docs/dbt-versions?utm_source=dbt-cli
+[0m21:08:37.140727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': 'ab3400fd-a86e-46a8-bac6-2e9ce6de851f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105333580>]}
+[0m21:08:37.141014 [info ] [MainThread]: Creating dbt configuration folder at /Users/yanis/.dbt
+[0m21:08:37.141970 [debug] [MainThread]: Starter project path: /Users/yanis/Library/Python/3.9/lib/python/site-packages/dbt/include/starter_project
+[0m21:08:37.147085 [info ] [MainThread]: 
+Your new dbt project "ecommerce_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m21:08:37.147320 [info ] [MainThread]: Setting up your profile.
+[0m21:10:27.597363 [info ] [MainThread]: Profile ecommerce_dbt written to /Users/yanis/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m21:10:27.607073 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 110.52098, "process_in_blocks": "0", "process_kernel_time": 0.145503, "process_mem_max_rss": "117243904", "process_out_blocks": "0", "process_user_time": 1.530282}
+[0m21:10:27.608498 [debug] [MainThread]: Command `dbt init` succeeded at 21:10:27.608227 after 110.52 seconds
+[0m21:10:27.609856 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104290ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105333580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105333bb0>]}
+[0m21:10:27.610863 [debug] [MainThread]: Flushing usage events
+[0m21:10:30.808049 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:16:45.998178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b4dbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110713a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1107138b0>]}
+
+
+============================== 21:16:46.000944 | 56024ce0-248d-4386-b04f-0f90a531f3b1 ==============================
+[0m21:16:46.000944 [info ] [MainThread]: Running with dbt=1.10.23
+[0m21:16:46.001293 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'use_experimental_parser': 'False', 'warn_error': 'None', 'introspect': 'True', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'printer_width': '80', 'version_check': 'True', 'use_colors': 'True', 'no_print': 'None', 'fail_fast': 'False', 'quiet': 'False', 'partial_parse': 'True', 'debug': 'False', 'write_json': 'True', 'log_format': 'default', 'cache_selected_only': 'False', 'profiles_dir': '/Users/yanis/.dbt', 'invocation_command': 'dbt debug', 'empty': 'None'}
+[0m21:16:46.001539 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m21:16:46.001744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': '56024ce0-248d-4386-b04f-0f90a531f3b1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b4dbe0>]}
+[0m21:16:46.011134 [info ] [MainThread]: dbt version: 1.10.23
+[0m21:16:46.011406 [info ] [MainThread]: python version: 3.9.6
+[0m21:16:46.011596 [info ] [MainThread]: python path: /Library/Developer/CommandLineTools/usr/bin/python3
+[0m21:16:46.011775 [info ] [MainThread]: os info: macOS-14.5-arm64-arm-64bit
+[0m21:16:46.066106 [info ] [MainThread]: Using profiles dir at /Users/yanis/.dbt
+[0m21:16:46.066407 [info ] [MainThread]: Using profiles.yml file at /Users/yanis/.dbt/profiles.yml
+[0m21:16:46.066605 [info ] [MainThread]: Using dbt_project.yml file at /Users/yanis/Desktop/Master/Projet_data_engineer/ecommerce-pipeline/dbt_project/dbt_project.yml
+[0m21:16:46.067032 [info ] [MainThread]: adapter type: postgres
+[0m21:16:46.067255 [info ] [MainThread]: adapter version: 1.9.1
+[0m21:16:46.067447 [info ] [MainThread]: Configuration:
+[0m21:16:46.067622 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m21:16:46.067790 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m21:16:46.067956 [info ] [MainThread]: Required dependencies:
+[0m21:16:46.068153 [debug] [MainThread]: Executing "git --help"
+[0m21:16:46.088774 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:16:46.089321 [debug] [MainThread]: STDERR: "b''"
+[0m21:16:46.089545 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:16:46.089780 [info ] [MainThread]: Connection:
+[0m21:16:46.090041 [info ] [MainThread]:   host: localhost
+[0m21:16:46.090214 [info ] [MainThread]:   port: 5432
+[0m21:16:46.090682 [info ] [MainThread]:   user: dataeng
+[0m21:16:46.090856 [info ] [MainThread]:   database: ecommerce
+[0m21:16:46.091036 [info ] [MainThread]:   schema: analytics
+[0m21:16:46.091197 [info ] [MainThread]:   connect_timeout: 10
+[0m21:16:46.091359 [info ] [MainThread]:   role: None
+[0m21:16:46.091520 [info ] [MainThread]:   search_path: None
+[0m21:16:46.091683 [info ] [MainThread]:   keepalives_idle: 0
+[0m21:16:46.091843 [info ] [MainThread]:   sslmode: None
+[0m21:16:46.092003 [info ] [MainThread]:   sslcert: None
+[0m21:16:46.092162 [info ] [MainThread]:   sslkey: None
+[0m21:16:46.092324 [info ] [MainThread]:   sslrootcert: None
+[0m21:16:46.092483 [info ] [MainThread]:   application_name: dbt
+[0m21:16:46.092645 [info ] [MainThread]:   retries: 1
+[0m21:16:46.093027 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m21:16:46.176143 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m21:16:46.211875 [debug] [MainThread]: Using postgres connection "debug"
+[0m21:16:46.212113 [debug] [MainThread]: On debug: select 1 as id
+[0m21:16:46.212290 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:16:46.369267 [debug] [MainThread]: SQL status: SELECT 1 in 0.157 seconds
+[0m21:16:46.369921 [debug] [MainThread]: On debug: Close
+[0m21:16:46.370149 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m21:16:46.370355 [info ] [MainThread]: [31m1 check failed:[0m
+[0m21:16:46.370540 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/yanis/Desktop/Master/Projet_data_engineer/ecommerce-pipeline/dbt_project/dbt_project.yml> not found
+
+[0m21:16:46.372060 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.41810897, "process_in_blocks": "0", "process_kernel_time": 0.220026, "process_mem_max_rss": "134594560", "process_out_blocks": "0", "process_user_time": 1.593461}
+[0m21:16:46.372410 [debug] [MainThread]: Command `dbt debug` failed at 21:16:46.372341 after 0.42 seconds
+[0m21:16:46.372641 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m21:16:46.372848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b4dbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110c76160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110c765b0>]}
+[0m21:16:46.373115 [debug] [MainThread]: Flushing usage events
+[0m21:16:47.246220 [debug] [MainThread]: An error was encountered while trying to flush usage events
