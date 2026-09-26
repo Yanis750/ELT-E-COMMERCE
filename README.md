@@ -1,8 +1,8 @@
 # Pipeline de données E-commerce
 
-Projet réalisé dans le cadre de mon Master Data Science, pour développer des compétences de Data Engineer. Il simule un pipeline de données de bout en bout pour une plateforme e-commerce : ingestion de données brutes, transformation via dbt, et visualisation dans un dashboard.
+Projet personnel réalisé en parallèle de mon Master Data Science, pour compléter ma formation et développer des compétences de Data Engineer. Ce n'est pas un projet académique noté ni demandé dans le cadre de mes cours : c'est une initiative personnelle pour construire un portfolio concret. Il simule un pipeline de données de bout en bout pour une plateforme e-commerce : ingestion de données brutes, transformation via dbt, et visualisation dans un dashboard.
 
-Le projet est construit en plusieurs phases progressives (voir [Roadmap](#roadmap)). Ce README documente l'état actuel : **Phase 1 — pipeline batch**.
+Le projet est construit en plusieurs phases progressives (voir [Roadmap](#roadmap)). Ce README documente l'état actuel : **Phase 1, pipeline batch**.
 
 ## Objectif
 
@@ -18,9 +18,9 @@ CSV bruts → PostgreSQL (raw) → dbt (staging → intermediate → marts) → 
 
 1. **Ingestion** : les fichiers CSV du dataset sont chargés tels quels dans des tables `raw_*` PostgreSQL via un script Python.
 2. **Transformation (dbt)** : les données brutes sont nettoyées et modélisées en 3 couches :
-   - `staging/` — renommage, typage, nettoyage basique (1 modèle par table source)
-   - `intermediate/` — jointures logiques entre entités (ex. commandes + paiements)
-   - `marts/` — tables finales orientées métier (faits et dimensions)
+   - `staging/` : renommage, typage, nettoyage basique (1 modèle par table source)
+   - `intermediate/` : jointures logiques entre entités (ex. commandes + paiements)
+   - `marts/` : tables finales orientées métier (faits et dimensions)
 3. **Qualité des données** : tests dbt (`unique`, `not_null`) sur les clés et colonnes critiques.
 4. **Visualisation** : dashboard Metabase connecté directement au schéma `analytics`.
 
@@ -36,7 +36,7 @@ CSV bruts → PostgreSQL (raw) → dbt (staging → intermediate → marts) → 
 
 ## Dataset
 
-[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) — environ 100 000 commandes passées entre 2016 et 2018 sur la marketplace brésilienne Olist. Le dataset est composé de 9 fichiers CSV reliés entre eux (commandes, clients, produits, paiements, avis, vendeurs, géolocalisation).
+[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) : environ 100 000 commandes passées entre 2016 et 2018 sur la marketplace brésilienne Olist. Le dataset est composé de 9 fichiers CSV reliés entre eux (commandes, clients, produits, paiements, avis, vendeurs, géolocalisation).
 
 ## Structure du projet
 
@@ -67,12 +67,12 @@ ecommerce-pipeline/
 **Staging** (`stg_*`) : une vue par table source, avec typage et nettoyage minimal.
 
 **Intermediate** :
-- `int_orders_with_payments` — jointure commandes / paiements
+- `int_orders_with_payments` : jointure commandes / paiements
 
 **Marts** :
-- `fct_orders` — table de faits : une ligne par commande, avec le montant total payé
-- `dim_customers` — dimension client
-- `dim_products` — dimension produit
+- `fct_orders` : table de faits : une ligne par commande, avec le montant total payé
+- `dim_customers` : dimension client
+- `dim_products` : dimension produit
 
 **Tests de qualité** : unicité et non-nullité des clés primaires (`order_id`, `customer_id`, `product_id`) sur les tables de marts.
 
@@ -113,9 +113,9 @@ dbt test
 
 Le dashboard Metabase regroupe trois analyses principales :
 
-1. **Chiffre d'affaires par mois** — évolution du CA à partir de `fct_orders`
-2. **Répartition des commandes par statut** — suivi opérationnel
-3. **Top clients par montant dépensé** — jointure `fct_orders` × `dim_customers`
+1. **Chiffre d'affaires par mois** : évolution du CA à partir de `fct_orders`
+2. **Répartition des commandes par statut** : suivi opérationnel
+3. **Top clients par montant dépensé** : jointure `fct_orders` × `dim_customers`
 
 *(captures d'écran disponibles dans `docs/screenshots/`)*
 
@@ -128,11 +128,11 @@ Le dashboard Metabase regroupe trois analyses principales :
 
 ## Roadmap
 
-- [x] **Phase 1** — Pipeline batch : CSV → PostgreSQL → dbt → Metabase
-- [ ] **Phase 2** — Orchestration du pipeline avec Airflow (scheduling, retries, alerting)
-- [ ] **Phase 3** — Ingestion en temps réel avec Kafka/Redpanda + traitement PySpark Structured Streaming
-- [ ] **Phase 4** — Monitoring (Prometheus/Grafana), tests automatisés, CI/CD (GitHub Actions), déploiement cloud (Terraform)
+- [x] **Phase 1** : Pipeline batch, CSV → PostgreSQL → dbt → Metabase
+- [ ] **Phase 2** : Orchestration du pipeline avec Airflow (scheduling, retries, alerting)
+- [ ] **Phase 3** : Ingestion en temps réel avec Kafka/Redpanda + traitement PySpark Structured Streaming
+- [ ] **Phase 4** : Monitoring (Prometheus/Grafana), tests automatisés, CI/CD (GitHub Actions), déploiement cloud (Terraform)
 
 ## Auteur
 
-Yanis — Master Data Science, en transition vers Data Engineering.
+Yanis, Master Data Science, projet personnel pour se former à la Data Engineering.
