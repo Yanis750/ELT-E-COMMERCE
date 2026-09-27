@@ -1,10 +1,20 @@
-import pandas as pd
-from sqlalchemy import create_engine
 import os
+from pathlib import Path
 
-engine = create_engine("postgresql://dataeng:dataeng@localhost:5432/ecommerce")
+import pandas as pd
+from sqlalchemy import create_engine, inspect, text
 
-RAW_DIR = "../data/raw"
+# Host configurable : "localhost" par defaut (execution locale),
+# "postgres" quand le script tourne dans un conteneur Docker (Airflow).
+DB_HOST = os.environ.get("DB_HOST", "localhost")
+
+engine = create_engine(f"postgresql://dataeng:dataeng@{DB_HOST}:5432/ecommerce")
+inspector = inspect(engine)
+
+# Chemin absolu, calcule a partir de l'emplacement du script lui-meme.
+SCRIPT_DIR = Path(__file__).resolve().parent
+RAW_DIR = SCRIPT_DIR.parent / "data" / "raw"
+
 files = {
     "raw_orders": "olist_orders_dataset.csv",
     "raw_order_items": "olist_order_items_dataset.csv",
@@ -18,7 +28,17 @@ files = {
 }
 
 for table_name, filename in files.items():
-    path = os.path.join(RAW_DIR, filename)
+    path = RAW_DIR / filename
     df = pd.read_csv(path)
-    df.to_sql(table_name, engine, if_exists="replace", index=False, schema="public")
-    print(f"✅ {table_name} chargée ({len(df)} lignes)")
+
+    if inspector.has_table(table_name, schema="public"):
+        # La table existe deja (et peut-etre des vues dbt en dependent) :
+        # on vide son contenu sans toucher a sa structure, plutot que de la supprimer.
+        with engine.begin() as conn:
+            conn.execute(text(f'TRUNCATE TABLE public."{table_name}"'))
+        df.to_sql(table_name, engine, if_exists="append", index=False, schema="public")
+    else:
+        # Premiere execution : la table n'existe pas encore, on la cree normalement.
+        df.to_sql(table_name, engine, if_exists="replace", index=False, schema="public")
+
+    print(f"OK {table_name} chargee ({len(df)} lignes)")
